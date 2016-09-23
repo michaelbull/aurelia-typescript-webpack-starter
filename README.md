@@ -4,6 +4,8 @@
   </a>
 </p>
 
+<br />
+
 # Aurelia + TypeScript + Webpack Starter Kit
 
 A minimal [Aurelia][aurelia] project written in [TypeScript][typescript] and
