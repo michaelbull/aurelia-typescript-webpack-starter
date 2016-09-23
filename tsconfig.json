@@ -1,0 +1,15 @@
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules",
+    "dist",
+    "webpack.config.js"
+  ]
+}

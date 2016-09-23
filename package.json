@@ -1,0 +1,34 @@
+{
+  "name": "aurelia-typescript-webpack-starter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "check-updates": "ncu",
+    "update-dependencies": "ncu --upgrade && npm install",
+    "clean": "rm -rf dist/*",
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "aurelia-bootstrapper-webpack": "1.0.0",
+    "aurelia-event-aggregator": "1.0.0",
+    "aurelia-framework": "1.0.4",
+    "aurelia-history-browser": "1.0.0",
+    "aurelia-loader-webpack": "1.0.3",
+    "aurelia-logging-console": "1.0.0",
+    "aurelia-templating-binding": "1.0.0",
+    "aurelia-templating-resources": "1.0.0",
+    "aurelia-templating-router": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/core-js": "0.9.34",
+    "aurelia-webpack-plugin": "1.1.0",
+    "awesome-typescript-loader": "2.2.4",
+    "html-loader": "0.4.4",
+    "npm-check-updates": "2.8.0",
+    "typescript": "2.0.3",
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.16.1"
+  },
+  "peerDependencies": {}
+}
