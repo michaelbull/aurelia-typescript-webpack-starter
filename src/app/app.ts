@@ -1,3 +1,7 @@
 export class App {
-    message: string;
+    readonly message: string;
+
+    constructor(message: string) {
+        this.message = message;
+    }
 }
