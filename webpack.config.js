@@ -34,9 +34,9 @@ module.exports = {
     },
 
     output: {
-      path: './dist',
-      publicPath: 'dist/',
-      filename: '[name].js'
+        path: './dist',
+        publicPath: 'dist/',
+        filename: '[name].js'
     },
 
     resolve: {
@@ -52,25 +52,20 @@ module.exports = {
     },
 
     module: {
-      loaders: [
-        {
-          test: /\.ts$/,
-          loader: 'awesome-typescript-loader'
-        },
-        {
-          test: /\.html$/,
-          loader: 'html'
-        }
-      ]
+        loaders: [
+            {
+                test: /\.ts$/,
+                loader: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.html$/,
+                loader: 'html'
+            }
+        ]
     },
 
     plugins: [
         new AureliaWebPackPlugin(),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: [
-                'aurelia'
-            ]
-        }),
-    ],
-}
+        new webpack.optimize.CommonsChunkPlugin('aurelia', 'aurelia.js')
+    ]
+};
