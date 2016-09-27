@@ -1,12 +1,11 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
-    "sourceMap": true,
-    "experimentalDecorators": true,
+    "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "strictNullChecks": true
   },
-  "compileOnSave": false,
   "exclude": [
     "node_modules",
     "dist",
