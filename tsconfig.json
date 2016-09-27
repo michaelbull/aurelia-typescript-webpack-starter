@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "es5",
     "noImplicitAny": true,
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictNullChecks": true
   },
