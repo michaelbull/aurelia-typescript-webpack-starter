@@ -7,8 +7,8 @@ module.exports = {
             './src/main.ts'
         ],
         aurelia: [
-            'aurelia-bootstrapper-webpack',
             'aurelia-binding',
+            'aurelia-bootstrapper-webpack',
             'aurelia-dependency-injection',
             'aurelia-event-aggregator',
             'aurelia-framework',
