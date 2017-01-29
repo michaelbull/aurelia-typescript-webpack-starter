@@ -1,4 +1,5 @@
-var webpack = require('webpack'),
+var path = require('path'),
+    webpack = require('webpack'),
     AureliaWebPackPlugin = require('aurelia-webpack-plugin');
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
         app: [
             './src/main.ts'
         ],
-        aurelia: [
+        vendor: [
             'aurelia-bootstrapper-webpack',
             'aurelia-event-aggregator',
             'aurelia-framework',
@@ -19,14 +20,13 @@ module.exports = {
     },
 
     output: {
-        path: './dist',
-        publicPath: 'dist/',
+        path: path.join(__dirname, 'dist'),
+        publicPath: '/dist/',
         filename: '[name].js'
     },
 
     resolve: {
         extensions: [
-            '',
             '.webpack.js',
             '.web.js',
             '.js',
@@ -37,20 +37,20 @@ module.exports = {
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/,
                 loader: 'awesome-typescript-loader'
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             }
         ]
     },
 
     plugins: [
         new AureliaWebPackPlugin(),
-        new webpack.optimize.CommonsChunkPlugin('aurelia', 'aurelia.js')
+        new webpack.optimize.CommonsChunkPlugin('vendor')
     ]
 };
