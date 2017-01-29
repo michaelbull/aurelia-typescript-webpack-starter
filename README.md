@@ -20,7 +20,7 @@ running `npm run clean`.
 ## Developing
 
 The [webpack-dev-server][dev-server] is installed for development purposes and
-can be run with the command `npm run dev`. This will start the development
+can be run with the command `npm start`. This will start the development
 server at [`http://localhost:8080`][localhost] and open it in your browser, with
 [inline mode][inline] and [hot module replacement][hmr] enabled.
 
