@@ -8,11 +8,12 @@
     "clean": "rm -rf dist/*"
   },
   "dependencies": {
-    "aurelia-bootstrapper-webpack": "1.0.0",
+    "aurelia-bootstrapper": "2.0.1",
     "aurelia-event-aggregator": "1.0.1",
     "aurelia-framework": "1.0.8",
     "aurelia-history-browser": "1.0.0",
     "aurelia-logging-console": "1.0.0",
+    "aurelia-loader-webpack": "2.0.0",
     "aurelia-templating-binding": "1.2.0",
     "aurelia-templating-resources": "1.2.0",
     "aurelia-templating-router": "1.0.1"
@@ -21,7 +22,8 @@
     "@types/core-js": "0.9.34",
     "@types/webpack": "2.2.2",
     "@types/webpack-env": "1.13.0",
-    "aurelia-webpack-plugin": "1.0.0-beta.4.0.1",
+    "aurelia-core-dependencies": "https://github.com/jods4/aurelia-webpack-build.git#aurelia-core-deps",
+    "aurelia-webpack-plugin": "https://github.com/aurelia/webpack-plugin.git#v2.0",
     "awesome-typescript-loader": "3.0.0-beta.18",
     "html-loader": "0.4.4",
     "typescript": "2.1.5",

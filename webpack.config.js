@@ -1,22 +1,11 @@
-var path = require('path'),
+let path = require('path'),
     webpack = require('webpack'),
-    AureliaWebPackPlugin = require('aurelia-webpack-plugin');
+    aureliaCoreDependencies = require('aurelia-core-dependencies'),
+    { AureliaPlugin } = require('aurelia-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: [
-            './src/main.ts'
-        ],
-        vendor: [
-            'aurelia-bootstrapper-webpack',
-            'aurelia-event-aggregator',
-            'aurelia-framework',
-            'aurelia-history-browser',
-            'aurelia-logging-console',
-            'aurelia-templating-binding',
-            'aurelia-templating-router',
-            'aurelia-templating-resources'
-        ]
+        app: 'aurelia-bootstrapper'
     },
 
     output: {
@@ -33,7 +22,12 @@ module.exports = {
             '.jsx',
             '.ts',
             '.tsx'
-        ]
+        ],
+        modules: [
+            'src',
+            'node_modules'
+        ],
+        symlinks: false
     },
 
     module: {
@@ -50,7 +44,9 @@ module.exports = {
     },
 
     plugins: [
-        new AureliaWebPackPlugin(),
-        new webpack.optimize.CommonsChunkPlugin('vendor')
+        new AureliaPlugin({
+            includeAll: 'src'
+        }),
+        aureliaCoreDependencies
     ]
 };
