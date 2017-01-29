@@ -7,9 +7,6 @@
     "emitDecoratorMetadata": true,
     "strictNullChecks": true
   },
-  "files": [
-    "node_modules/aurelia-protractor-plugin/protractor.d.ts"
-  ],
   "exclude": [
     "node_modules",
     "dist",

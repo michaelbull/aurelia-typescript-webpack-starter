@@ -1,4 +1,4 @@
-import { browser } from 'protractor';
+import { browser } from 'aurelia-protractor-plugin/protractor';
 import { heading } from './home.page';
 
 describe('home page', () => {
