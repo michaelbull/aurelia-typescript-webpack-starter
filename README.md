@@ -36,4 +36,4 @@ This project is available under the terms of the ISC license. See the
 [localhost]: http://localhost:8080
 [inline]: https://webpack.github.io/docs/webpack-dev-server.html#inline-mode
 [hmr]: https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement
-[license]: https://github.com/MikeBull94/aurelia-typescript-webpack-starter/blob/master/LICENSE
+[license]: LICENSE
