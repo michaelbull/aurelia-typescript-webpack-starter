@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --inline --hot --open",
-    "build": "webpack --progress --hide-modules",
+    "build": "webpack --hide-modules",
     "clean": "rm -rf dist/*"
   },
   "dependencies": {
