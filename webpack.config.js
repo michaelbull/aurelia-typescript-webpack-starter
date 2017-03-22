@@ -1,6 +1,5 @@
 let path = require('path'),
     webpack = require('webpack'),
-    aureliaCoreDependencies = require('aurelia-core-dependencies'),
     { AureliaPlugin } = require('aurelia-webpack-plugin');
 
 module.exports = {
@@ -46,7 +45,6 @@ module.exports = {
     plugins: [
         new AureliaPlugin({
             includeAll: 'src'
-        }),
-        aureliaCoreDependencies
+        })
     ]
 };
