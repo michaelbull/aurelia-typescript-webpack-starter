@@ -1,16 +1,18 @@
-import { browser } from 'aurelia-protractor-plugin/protractor';
-import { heading } from './home.page';
+import { HomePage } from './pages/home.page';
 
 describe('home page', () => {
-    beforeEach(() => {
-        browser.loadAndWaitForAureliaPage('/');
+    let page: HomePage;
+
+    beforeAll(() => {
+        page = new HomePage();
+        page.open();
     });
 
     it('should set the page title', () => {
-        expect<any>(browser.getTitle()).toBe('Home | My Aurelia App');
+        expect<any>(page.title()).toBe('Home | My Aurelia App');
     });
 
     it('should set the page heading', () => {
-        expect<any>(heading()).toBe('Home page');
+        expect<any>(page.heading.getText()).toBe('Home page');
     });
 });
