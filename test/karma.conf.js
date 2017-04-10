@@ -1,9 +1,4 @@
-let path = require('path'),
-    webpackConfig = require('../webpack.config');
-
-webpackConfig.devtool = '#inline-source-map';
-
-module.exports = function (config) {
+module.exports = (config) => {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: __dirname,
@@ -11,12 +6,14 @@ module.exports = function (config) {
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: [
-            'jasmine'
+            'jasmine',
+            'karma-typescript'
         ],
 
         // list of files / patterns to load in the browser
         files: [
-            { pattern: 'spec-bundle.ts', watched: false }
+            '../src/**/*.ts',
+            'unit/**/*.spec.ts'
         ],
 
         // mime types
@@ -27,13 +24,14 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'spec-bundle.ts': ['webpack']
+            '../src/**/*.ts': ['karma-typescript'],
+            'unit/**/*.spec.ts': ['karma-typescript']
         },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['spec'],
+        reporters: ['spec', 'karma-typescript'],
 
         // web server port
         port: 9876,
@@ -61,7 +59,20 @@ module.exports = function (config) {
             'Chrome'
         ],
 
-        // webpack
-        webpack: webpackConfig
+        karmaTypescriptConfig: {
+            compilerOptions: {
+                lib: [
+                    'es6',
+                    'dom'
+                ]
+            },
+            include: [
+                '../src/**/*.ts',
+                'unit/**/*.spec.ts'
+            ],
+            reports: {
+                html: 'reports/coverage'
+            }
+        }
     });
 };

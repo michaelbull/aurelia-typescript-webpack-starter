@@ -21,3 +21,6 @@ npm-debug.log*
 
 # Distribution
 dist/
+
+# Reports
+reports/

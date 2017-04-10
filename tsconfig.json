@@ -3,9 +3,9 @@
   "compilerOptions": {
     "target": "es5",
     "noImplicitAny": true,
+    "strictNullChecks": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": true,
     "lib": [
       "es6",
       "dom"
