@@ -16,11 +16,9 @@
 *.iws
 
 # npm
+!.npm*
 node_modules/
 npm-debug.log*
 
 # Distribution
 dist/
-
-# Reports
-reports/
