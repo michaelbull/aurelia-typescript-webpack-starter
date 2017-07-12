@@ -1,3 +1,4 @@
+import { PLATFORM } from 'aurelia-framework';
 import {
     ConfiguresRouter,
     Router,
@@ -10,9 +11,10 @@ export class App implements ConfiguresRouter {
 
         config.mapRoute({
             route: '',
-            moduleId: './pages/home',
-            nav: true,
-            title: 'Home'
-        }).mapUnknownRoutes('./pages/not-found');
+            moduleId: PLATFORM.moduleName('./pages/home'),
+            name: 'home',
+            title: 'Home',
+            nav: true
+        }).mapUnknownRoutes(PLATFORM.moduleName('./pages/not-found'));
     }
 }

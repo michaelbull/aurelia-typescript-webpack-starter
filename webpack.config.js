@@ -8,9 +8,10 @@ module.exports = {
     },
 
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: '[name].js'
+        filename: '[name].js',
+        chunkFilename: '[name].js'
     },
 
     resolve: {
@@ -42,8 +43,6 @@ module.exports = {
     },
 
     plugins: [
-        new AureliaPlugin({
-            includeAll: 'src'
-        })
+        new AureliaPlugin()
     ]
 };
