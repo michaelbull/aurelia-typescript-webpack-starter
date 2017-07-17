@@ -10,7 +10,7 @@ describe('ExampleComponent', () => {
 
     beforeEach(async () => {
         component = StageComponent
-            .withResources(PLATFORM.moduleName('src/example'))
+            .withResources(PLATFORM.moduleName('example'))
             .inView('<example></example>');
 
         await component.create(bootstrap);
