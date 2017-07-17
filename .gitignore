@@ -22,3 +22,5 @@ npm-debug.log*
 
 # Distribution
 dist/
+
+coverage/

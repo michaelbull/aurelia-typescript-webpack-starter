@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --open",
     "build": "webpack --progress --hide-modules",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/*",
+    "test": "karma start test/karma.config.js --singleRun"
   },
   "dependencies": {
     "aurelia-bootstrapper": "2.1.1",
@@ -18,11 +19,19 @@
     "aurelia-templating-router": "1.1.0"
   },
   "devDependencies": {
+    "@types/jasmine": "2.5.53",
     "@types/webpack": "3.0.4",
     "@types/webpack-env": "1.13.0",
+    "aurelia-testing": "1.0.0-beta.3.0.1",
     "aurelia-webpack-plugin": "2.0.0-rc.2",
     "awesome-typescript-loader": "3.2.1",
     "html-loader": "0.4.5",
+    "jasmine-core": "2.6.4",
+    "karma": "1.7.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.0",
+    "karma-spec-reporter": "0.0.31",
+    "karma-typescript": "github:monounity/karma-typescript#next",
     "typescript": "2.4.1",
     "webpack": "3.2.0",
     "webpack-dev-server": "2.5.1"
