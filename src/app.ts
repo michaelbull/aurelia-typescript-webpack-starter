@@ -15,6 +15,9 @@ export class App implements ConfiguresRouter {
             name: 'home',
             title: 'Home',
             nav: true
+        }).mapRoute({
+            route: 'example',
+            moduleId: PLATFORM.moduleName('./example')
         }).mapUnknownRoutes(PLATFORM.moduleName('./pages/not-found'));
     }
 }
