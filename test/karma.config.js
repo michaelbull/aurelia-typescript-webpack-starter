@@ -1,7 +1,7 @@
 module.exports = (config) => {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: process.cwd(),
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -12,9 +12,9 @@ module.exports = (config) => {
 
         // list of files / patterns to load in the browser
         files: [
-            'setup.ts',
-            '../src/**/*.ts',
-            'unit/**/*.spec.ts'
+            'test/karma-setup.ts',
+            'src/**/*.ts',
+            'test/unit/**/*.spec.ts',
         ],
 
         // list of files to exclude
@@ -23,9 +23,7 @@ module.exports = (config) => {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'setup.ts': ['karma-typescript'],
-            '../src/**/*.ts': ['karma-typescript'],
-            'unit/**/*.spec.ts': ['karma-typescript']
+            '**/*.ts': ['karma-typescript']
         },
 
         // test results reporter to use
@@ -53,19 +51,20 @@ module.exports = (config) => {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: [
-            'ChromeHeadless'
+            'Chrome'
         ],
 
         karmaTypescriptConfig: {
-            include: [
-                'setup.ts',
-                '../src/**/*.ts',
-                'unit/**/*.spec.ts'
-            ],
             compilerOptions: {
                 lib: [
                     'es6',
                     'dom'
+                ]
+            },
+            coverageOptions: {
+                exclude: [
+                    /\.(d|spec|test)\.ts$/i,
+                    /setup\.ts$/i
                 ]
             }
         }
