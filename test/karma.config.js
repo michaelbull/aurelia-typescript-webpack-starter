@@ -14,7 +14,7 @@ module.exports = (config) => {
         files: [
             'test/karma-setup.ts',
             'src/**/*.ts',
-            'test/unit/**/*.spec.ts',
+            'test/unit/**/*.spec.ts'
         ],
 
         // list of files to exclude
