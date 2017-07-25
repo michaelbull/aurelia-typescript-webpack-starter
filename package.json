@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --open",
-    "build": "webpack --progress --hide-modules",
-    "clean": "rm -rf dist/*"
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server --env=dev --inline --hot --open",
+    "build": "webpack --env=prod"
   },
   "dependencies": {
     "aurelia-bootstrapper": "2.1.1",
@@ -18,13 +18,14 @@
     "aurelia-templating-router": "1.1.0"
   },
   "devDependencies": {
-    "@types/webpack": "3.0.4",
+    "@types/webpack": "3.0.5",
     "@types/webpack-env": "1.13.0",
     "aurelia-webpack-plugin": "2.0.0-rc.2",
     "awesome-typescript-loader": "3.2.1",
     "html-loader": "0.4.5",
-    "typescript": "2.4.1",
-    "webpack": "3.2.0",
-    "webpack-dev-server": "2.5.1"
+    "rimraf": "2.6.1",
+    "typescript": "2.4.2",
+    "webpack": "3.4.0",
+    "webpack-dev-server": "2.6.1"
   }
 }
