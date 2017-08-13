@@ -3,8 +3,9 @@ import {
     PLATFORM
 } from 'aurelia-framework';
 
-export function configure(aurelia: Aurelia): void {
+export async function configure(aurelia: Aurelia): Promise<void> {
     aurelia.use.standardConfiguration();
 
-    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    await aurelia.start();
+    await aurelia.setRoot(PLATFORM.moduleName('app'));
 }

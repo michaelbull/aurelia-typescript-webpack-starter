@@ -18,14 +18,14 @@
     "aurelia-templating-router": "1.1.0"
   },
   "devDependencies": {
-    "@types/webpack": "3.0.5",
+    "@types/webpack": "3.0.8",
     "@types/webpack-env": "1.13.0",
-    "aurelia-webpack-plugin": "2.0.0-rc.2",
-    "awesome-typescript-loader": "3.2.1",
-    "html-loader": "0.4.5",
+    "aurelia-webpack-plugin": "2.0.0-rc.3",
+    "awesome-typescript-loader": "3.2.2",
+    "html-loader": "0.5.1",
     "rimraf": "2.6.1",
     "typescript": "2.4.2",
-    "webpack": "3.4.0",
-    "webpack-dev-server": "2.6.1"
+    "webpack": "3.5.4",
+    "webpack-dev-server": "2.7.1"
   }
 }
