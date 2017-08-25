@@ -58,6 +58,11 @@ module.exports = (env) => {
                 NODE_ENV: JSON.stringify('production')
             }
         }));
+    } else if (env === 'dev') {
+        config.devtool = 'cheap-module-eval-source-map';
+        config.devServer = {
+            stats: 'errors-only'
+        };
     }
 
     return config;
