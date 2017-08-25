@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
     let config = {
@@ -10,7 +11,6 @@ module.exports = (env) => {
 
         output: {
             path: path.resolve(__dirname, 'dist'),
-            publicPath: '/dist/',
             filename: '[name].js',
             chunkFilename: '[name].js'
         },
@@ -44,7 +44,10 @@ module.exports = (env) => {
         },
 
         plugins: [
-            new AureliaPlugin()
+            new AureliaPlugin(),
+            new HtmlWebpackPlugin({
+                template: 'src/index.html'
+            })
         ]
     };
 
