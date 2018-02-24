@@ -1,7 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const { AureliaPlugin } = require('aurelia-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { AureliaPlugin } = require('aurelia-webpack-plugin');
+
+const srcDir = path.resolve(__dirname, 'src');
+const distDir = path.resolve(__dirname, 'dist');
 
 module.exports = (env) => {
     let config = {
@@ -10,24 +13,9 @@ module.exports = (env) => {
         },
 
         output: {
-            path: path.resolve(__dirname, 'dist'),
+            path: distDir,
             filename: '[name].js',
             chunkFilename: '[name].js'
-        },
-
-        resolve: {
-            extensions: [
-                '.webpack.js',
-                '.web.js',
-                '.js',
-                '.jsx',
-                '.ts',
-                '.tsx'
-            ],
-            modules: [
-                'src',
-                'node_modules'
-            ]
         },
 
         module: {
@@ -43,26 +31,42 @@ module.exports = (env) => {
             ]
         },
 
+        resolve: {
+            extensions: [
+                '.js',
+                '.ts'
+            ],
+            modules: [
+                'node_modules',
+                srcDir
+            ]
+        },
+
         plugins: [
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
-                template: 'src/index.html'
+                template: path.resolve(srcDir, 'index.html')
+            }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify(env)
+                }
             })
-        ]
+        ],
+
+        devServer: {
+            stats: 'errors-only'
+        }
     };
 
-    if (env === 'prod') {
-        config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-        config.plugins.push(new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }));
-    } else if (env === 'dev') {
-        config.devtool = 'cheap-module-eval-source-map';
-        config.devServer = {
-            stats: 'errors-only'
-        };
+    switch (env) {
+        case 'development':
+            config.devtool = 'cheap-module-eval-source-map';
+            break;
+
+        case 'production':
+            config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+            break;
     }
 
     return config;

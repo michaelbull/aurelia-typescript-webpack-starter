@@ -11,11 +11,9 @@
 A minimal [Aurelia][aurelia] starter kit written in [TypeScript][typescript] and
 built using [webpack][webpack].
 
-## Building
+## Initial Setup
 
-The project can be built by running `npm run build` which will assemble the
-distribution under the `./dist` directory. This directory can be cleaned by
-running `npm run clean`.
+After cloning the repository, install the dependencies using `npm install`.
 
 ## Developing
 
@@ -23,6 +21,12 @@ The [webpack-dev-server][dev-server] is installed for development purposes and
 can be run with the command `npm start`. This will start the development
 server at [`http://localhost:8080`][localhost] and open it in your browser, with
 [inline mode][inline] and [hot module replacement][hmr] enabled.
+
+## Building
+
+The project can be built by running `npm run build` which will assemble the
+distribution under the `./dist` directory. This directory can be cleaned by
+running `npm run clean`.
 
 ## License
 

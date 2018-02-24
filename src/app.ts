@@ -1,3 +1,3 @@
 export class App {
-    message: string;
+    message: string = '';
 }
