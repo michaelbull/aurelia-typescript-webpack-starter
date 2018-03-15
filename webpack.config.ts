@@ -1,13 +1,14 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
+
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 
-const srcDir = path.resolve(__dirname, 'src');
-const distDir = path.resolve(__dirname, 'dist');
+let srcDir = path.resolve(__dirname, 'src');
+let distDir = path.resolve(__dirname, 'dist');
 
-module.exports = (env) => {
-    let config = {
+function configure(env: any, args: any): webpack.Configuration {
+    let config: webpack.Configuration = {
         entry: {
             app: 'aurelia-bootstrapper'
         },
@@ -22,7 +23,7 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.ts$/,
-                    use: 'awesome-typescript-loader'
+                    use: 'ts-loader'
                 },
                 {
                     test: /\.html$/,
@@ -46,11 +47,6 @@ module.exports = (env) => {
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
                 template: path.resolve(srcDir, 'index.html')
-            }),
-            new webpack.DefinePlugin({
-                'process.env': {
-                    NODE_ENV: JSON.stringify(env)
-                }
             })
         ],
 
@@ -59,15 +55,11 @@ module.exports = (env) => {
         }
     };
 
-    switch (env) {
-        case 'development':
-            config.devtool = 'cheap-module-eval-source-map';
-            break;
-
-        case 'production':
-            config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-            break;
+    if (args.mode === 'development') {
+        config.devtool = 'inline-source-map';
     }
 
     return config;
-};
+}
+
+export default configure;
