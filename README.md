@@ -8,6 +8,8 @@
 
 # Aurelia + TypeScript + Webpack Starter Kit
 
+[![dependencies Status](https://david-dm.org/michaelbull/aurelia-typescript-webpack-starter/status.svg?style=flat-square)](https://david-dm.org/michaelbull/aurelia-typescript-webpack-starter) [![devDependencies Status](https://david-dm.org/michaelbull/aurelia-typescript-webpack-starter/dev-status.svg?style=flat-square)](https://david-dm.org/michaelbull/aurelia-typescript-webpack-starter?type=dev)
+
 A minimal [Aurelia][aurelia] starter kit written in [TypeScript][typescript] and
 built using [webpack][webpack].
 
