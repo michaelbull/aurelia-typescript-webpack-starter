@@ -35,8 +35,8 @@ running `npm run clean`.
 This project is available under the terms of the ISC license. See the
 [`LICENSE`][license] file for the copyright information and licensing terms.
 
-[aurelia]: http://aurelia.io/
-[webpack]: https://webpack.github.io/
+[aurelia]: https://aurelia.io/
+[webpack]: https://webpack.js.org/
 [typescript]: https://www.typescriptlang.org/
 [dev-server]: https://github.com/webpack/webpack-dev-server
 [localhost]: http://localhost:8080
