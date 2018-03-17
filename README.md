@@ -33,7 +33,7 @@ running `npm run clean`.
 ## License
 
 This project is available under the terms of the ISC license. See the
-[`LICENSE`][license] file for the copyright information and licensing terms.
+[`LICENSE`](LICENSE) file for the copyright information and licensing terms.
 
 [aurelia]: https://aurelia.io/
 [webpack]: https://webpack.js.org/
@@ -42,4 +42,3 @@ This project is available under the terms of the ISC license. See the
 [localhost]: http://localhost:8080
 [inline]: https://webpack.github.io/docs/webpack-dev-server.html#inline-mode
 [hmr]: https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement
-[license]: LICENSE
