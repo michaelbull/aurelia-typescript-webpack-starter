@@ -28,6 +28,13 @@ function configure(env: any, args: any): webpack.Configuration {
                 {
                     test: /\.html$/,
                     use: 'html-loader'
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader'
+                    ]
                 }
             ]
         },
