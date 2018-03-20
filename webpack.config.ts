@@ -46,7 +46,7 @@ function configure(env: any, args: any): webpack.Configuration {
         plugins: [
             new AureliaPlugin(),
             new HtmlWebpackPlugin({
-                template: path.resolve(srcDir, 'index.html')
+                template: 'index.html'
             })
         ],
 
